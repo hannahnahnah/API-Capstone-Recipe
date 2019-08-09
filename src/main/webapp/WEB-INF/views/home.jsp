@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<c:forEach items="${query}" var="query">
+${query}
+</c:forEach>
 </body>
 </html>
