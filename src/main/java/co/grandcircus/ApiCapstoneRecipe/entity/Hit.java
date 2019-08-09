@@ -2,7 +2,7 @@ package co.grandcircus.ApiCapstoneRecipe.entity;
 
 public class Hit {
 	
-	private Recipe recipe;
+	public Recipe recipe;
 
 	public Recipe getRecipe() {
 		return recipe;

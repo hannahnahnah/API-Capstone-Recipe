@@ -14,7 +14,7 @@ public class Recipe {
 	
 	private Long id;
 	private String uri; //to connect to he json
-	private String label; //recipe title
+	public String label; //recipe title
 	private String image;
 	private String source; //name of source ex: Epicurious
 	private String url; // to the original source
