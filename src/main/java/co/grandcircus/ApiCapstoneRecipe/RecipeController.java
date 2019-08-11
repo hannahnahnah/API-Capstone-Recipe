@@ -36,5 +36,27 @@ public class RecipeController {
 			
 	
 	}
+	///// view whole list 
+	@RequestMapping("/list-results")
+	public ModelAndView allRecipes(
+			@RequestParam(value="q", required=false) String q) {
+		
+			q=" pizza ";
+			
+			List<Hit> hits = apiService.searchRecipes(q).getHits();
+			
+			return new ModelAndView("list-results", "food", hits);
+			
+	
+	}
 
+	 /////view details
+	
+	@RequestMapping("/detail")
+	public ModelAndView itemDetail(@RequestParam("uri") String uri) {
+		ModelAndView mav = new ModelAndView("/detail");
+		mav.addObject("food",apiService.searchRecipes(uri));
+
+		return mav;
+	}
 }
