@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import co.grandcircus.ApiCapstoneRecipe.dao.RecipeApiService;
@@ -38,7 +39,7 @@ public class RecipeController {
 	
 	}
 	///// view whole list 
-	@PostMapping("/list-results")
+	@RequestMapping("/list-results")
 	public ModelAndView allRecipes(
 			@RequestParam(value="recipe", required=false) String q) {
 		
@@ -54,12 +55,15 @@ public class RecipeController {
 	 /////view details
 	
 	@RequestMapping("/details")
-	public ModelAndView itemDetail(@RequestParam("label") String label) {
+	public ModelAndView itemDetail(@RequestParam("uri") String uri) {
 //		ModelAndView mav = new ModelAndView("details");
 //		mav.addObject("food",apiService.searchRecipes(label));
-		System.out.println(apiService.searchRecipes(label).getHits());
 		
-		List<Hit> hits = apiService.searchRecipes(label).getHits();
+		System.out.println("URI: " + uri);
+		
+		System.out.println(apiService.searchRecipes(uri).getHits());
+		
+		List<Hit> hits = apiService.searchRecipes(uri).getHits();
 		System.out.println(hits);
 		return new ModelAndView("details", "food", hits);
 //System.out.println(apiService.searchRecipes(label));

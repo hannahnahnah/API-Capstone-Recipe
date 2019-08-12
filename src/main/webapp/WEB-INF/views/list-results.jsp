@@ -76,10 +76,14 @@
 											${food.recipe.healthLabels}</p>
 										<p class="card-text">Serving Size: ${food.recipe.yield}</p>
 									</div>
+ <a href="<c:url value="/details">
+<c:param name ="uri"  value="${food.recipe.uri}">
+</c:param>
+</c:url>"> <button type="button" class="btn btn-info btn-lg btn-block">Recipe</button>
+ </a> 
 
-									<a href="/details?label=${food.recipe.label}"><button
-											type="button" class="btn btn-info btn-lg btn-block">Recipe</button></a>
 
+						
 									<a href="${food.recipe.url}"><button type="button"
 											class="btn btn-danger btn-lg btn-block">Recipe
 											Source</button></a>
