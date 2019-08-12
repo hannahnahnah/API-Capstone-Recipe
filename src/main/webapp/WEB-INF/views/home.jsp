@@ -8,6 +8,11 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+	<!-- fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Pacifico&display=swap"
+	rel="stylesheet">
+	
 <title>The Golden Spoon Home</title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -18,13 +23,17 @@
 
 </head>
 <body>
+
+<div class="jumbotron text-center" style="margin-bottom:0 ; background-image: url('https://c.pxhere.com/images/4f/b0/6c67e457c5098296a9321733d364-1430907.jpg!d') ; background-repeat: none;" >
+ 
+</div>
+
 	<!--    navbar come here          -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
-		<a class="navbar-brand" href="/">The Golden Spoon</a>
+		<a class="navbar-brand" href="/"style="color:red;">The Golden Spoon</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarColor01" aria-controls="navbarColor01"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+			data-target="#navbarColor01" >
+			
 		</button>
 
 		<div id="navbarColor02">
@@ -40,22 +49,23 @@
 	<!-- end navbar  -->
 	<div class="wrapper">
 	
-		<h1 style="text-align: center; padding-top: 2%;"> Welcome to The Golden Spoon
+		<h1
+			style=" text-shadow: 2px 2px 4px #d9d9d2; font-family: 'Pacifico', cursive; text-align: center; padding-top: 2%;  color: red; font-size: 60px;"> Welcome to The Golden Spoon
 			Recipe Finder</h1>
 
 
 		<form action="/list-results" method="post" style="text-align:center; padding-top: 4%;">
-			
-				<div class="form" >
-				<h3>Enter the name, ingredient, or serving size </h3>
-					 <input type="text" name="recipe"></br></br>
-					 
-					   <button type="submit" class="btn btn-primary bg-warning">Submit</button>
-				</div>
-				
-	
-		</form>
-
+            
+                <div class="form" >
+                <h3 style="color:orange;">Enter the name, ingredient, or serving size </h3>
+                     <input type="text" name="recipe"></br></br>
+                     
+                       <button type="submit" class="btn btn-warning">Submit</button>
+                </div>
+                
+    
+        </form>
+        
 	</div>
 
 
