@@ -27,19 +27,20 @@
 
 </head>
 <body>
-<div class="jumbotron text-center" style="margin-bottom:0 ; background-image: url('https://c.pxhere.com/images/12/df/75ef1a554c8b23cca4fba078ed8a-1442849.jpg!d') ; background-repeat: none;" >
- 
-</div>
+	<div class="jumbotron text-center"
+		style="margin-bottom: 0; background-image: url('https://c.pxhere.com/images/12/df/75ef1a554c8b23cca4fba078ed8a-1442849.jpg!d'); background-repeat: none;">
+
+	</div>
 
 
 
 	<!--    navbar come here          -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
-		<a class="navbar-brand" href="/" style="color:red;">The Golden Spoon</a>
+		<a class="navbar-brand" href="/" style="color: red;">The Golden
+			Spoon</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
-			data-target="#navbarColor01" aria-controls="navbarColor01"
-			>
-			
+			data-target="#navbarColor01" aria-controls="navbarColor01">
+
 		</button>
 
 		<div id="navbarColor02">
@@ -57,31 +58,38 @@
 	<div class="wrapper">
 
 		<h1
-            style="font-family: 'Pacifico', cursive; text-align: center; padding-top: 2%; padding-bottom: 2%; color: red; font-size: 60px;">Recipes</h1>
-        <div class="container">
-            <c:forEach items="${food}" var="food" >
-                <div class="gallery"
-                    style=";float: left; width: 33.33%; height: 500px; padding: 5px; ">
-                    <div class="responsive">
-                        <div class="thumbnail"  style="box-shadow: 5px 5px 7px #d9d9d2;">
-                        
-                            <div class="card text-white bg-warning mb-3">
-                                <h4 class="card-header">${food.recipe.label}</h4>
-                                <img style="height: 160px; width: 100%;"
-                                    src="${food.recipe.image}" alt="card-image">
-                                <div class="desc">
-                                    <div class="card-body">
-                                        <p class="card-text">Heath Label: ${food.recipe.healthLabels}</p>
-                                        <p class="card-text">Serving Size: ${food.recipe.yield}</p>
-                                    </div>
-                                    <a href="/details?label=${food.recipe.label}"><button
-                                            type="button" class="btn btn-danger btn-lg btn-block">Recipe</button></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </c:forEach>
+			style="font-family: 'Pacifico', cursive; text-align: center; padding-top: 2%; padding-bottom: 2%; color: red; font-size: 60px;">Recipes</h1>
+		<div class="container">
+			<c:forEach items="${food}" var="food">
+				<div class="gallery"
+					style="float: left; width: 33.33%; height: 500px; padding: 5px;">
+					<div class="responsive">
+						<div class="thumbnail" style="box-shadow: 5px 5px 7px #d9d9d2;">
+
+							<div class="card text-white bg-warning mb-3">
+								<h4 class="card-header">${food.recipe.label}</h4>
+								<img style="height: 160px; width: 100%;"
+									src="${food.recipe.image}" alt="card-image">
+								<div class="desc">
+									<div class="card-body">
+										<p class="card-text">Heath Label:
+											${food.recipe.healthLabels}</p>
+										<p class="card-text">Serving Size: ${food.recipe.yield}</p>
+									</div>
+
+									<a href="/details?label=${food.recipe.label}"><button
+											type="button" class="btn btn-info btn-lg btn-block">Recipe</button></a>
+
+									<a href="${food.recipe.url}"><button type="button"
+											class="btn btn-danger btn-lg btn-block">Recipe
+											Source</button></a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</c:forEach>
 
 
 
