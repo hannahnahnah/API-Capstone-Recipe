@@ -1,12 +1,14 @@
 package co.grandcircus.ApiCapstoneRecipe.dao;
 
+import java.util.ArrayList;
+
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.client.ClientHttpRequestInterceptor;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
+import co.grandcircus.ApiCapstoneRecipe.entity.Hit;
 import co.grandcircus.ApiCapstoneRecipe.entity.RecipeResponse;
 
 @Component
@@ -33,6 +35,16 @@ private RestTemplate restTemplate;
 		System.out.println(url);
 		return responses;
 		
+	}
+	
+	public Hit searchDetail(String q) {
+		String url = "https://api.edamam.com/search?q=" + q + "&app_id=40f4a4da&app_key=84fdde4b9f1d9efefe0e9af51dee213d&from=0&to=3&calories=591-722&health=alcohol-free";
+		RecipeResponse responses = restTemplate.getForObject(url, RecipeResponse.class);
+		
+		List<Hit> list = responses.getHits();
+		Hit recipe = list(0);
+		
+		return recipe;
 	}
 	
 

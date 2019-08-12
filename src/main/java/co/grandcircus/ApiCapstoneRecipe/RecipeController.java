@@ -4,13 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import co.grandcircus.ApiCapstoneRecipe.dao.RecipeApiService;
 import co.grandcircus.ApiCapstoneRecipe.entity.Hit;
+import co.grandcircus.ApiCapstoneRecipe.entity.RecipeResponse;
 
 @Controller
 public class RecipeController {
@@ -26,9 +27,9 @@ public class RecipeController {
 	
 	@RequestMapping("/recipe")
 	public ModelAndView listRecipes(
-			@RequestParam(value="q", required=false) String q) {
+			@RequestParam(value="recipe", required=false) String q) {
 		
-			q="chicken";
+			
 			
 			List<Hit> hits = apiService.searchRecipes(q).getHits();
 			
@@ -37,11 +38,11 @@ public class RecipeController {
 	
 	}
 	///// view whole list 
-	@RequestMapping("/list-results")
+	@PostMapping("/list-results")
 	public ModelAndView allRecipes(
-			@RequestParam(value="q", required=false) String q) {
+			@RequestParam(value="recipe", required=false) String q) {
 		
-			q=" pizza ";
+			//q=" pizza ";
 			
 			List<Hit> hits = apiService.searchRecipes(q).getHits();
 			
@@ -52,11 +53,16 @@ public class RecipeController {
 
 	 /////view details
 	
-	@RequestMapping("/detail")
-	public ModelAndView itemDetail(@RequestParam("uri") String uri) {
-		ModelAndView mav = new ModelAndView("/detail");
-		mav.addObject("food",apiService.searchRecipes(uri));
-
-		return mav;
+	@RequestMapping("/details")
+	public ModelAndView itemDetail(@RequestParam("label") String label) {
+//		ModelAndView mav = new ModelAndView("details");
+//		mav.addObject("food",apiService.searchRecipes(label));
+		System.out.println(apiService.searchRecipes(label).getHits());
+		
+		List<Hit> hits = apiService.searchRecipes(label).getHits();
+		System.out.println(hits);
+		return new ModelAndView("details", "food", hits);
+//System.out.println(apiService.searchRecipes(label));
+		//return mav;
 	}
 }

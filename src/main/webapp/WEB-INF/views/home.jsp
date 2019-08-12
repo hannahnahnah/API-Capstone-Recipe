@@ -47,7 +47,7 @@
 		<form action="/list-results" method="post" style="text-align:center; padding-top: 4%;">
 			
 				<div class="form" >
-				<h3>Enter the name , ingredient ,or serving size </h3>
+				<h3>Enter the name, ingredient, or serving size </h3>
 					 <input type="text" name="recipe"></br></br>
 					 
 					   <button type="submit" class="btn btn-primary bg-warning">Submit</button>

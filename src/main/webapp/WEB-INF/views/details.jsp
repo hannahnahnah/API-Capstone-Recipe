@@ -41,23 +41,23 @@
 	<!-- end navbar  -->
 
 	<div class="wrapper">
-		<h2>${food.recipe.label}</h2>
+		<h2>${food[0].label}</h2>
 		<div class="container" >
 
 			<div class="row">
 				<div class="column">
-					<img src="${food.recipe.image}" style="width: 150px; height: 150px">
-					<p>${food.recipe.dietLabels}</p>
-					<p>${food.recipe.healthLabels}</p>
-					<p>${food.recipe.calories}</p>
-					<p>${food.recipe.cautions}</p>
+					<img src="${food.image}" style="width: 150px; height: 150px">
+					<p>${food.dietLabels}</p>
+					<p>${food.healthLabels}</p>
+					<p>${food.calories}</p>
+					<p>${food.cautions}</p>
 				</div>
 
 
 				<div class="column">
 					<h3>Ingredients</h3>
-					<p>${food.recipe.ingredientLines}</p>
-					<a href="${food.recipe.url}"><button type="button" class="btn btn-info bg-warning">${food.recipe.source}</button></a>
+					<p>${food.ingredientLines}</p>
+					<a href="${food.url}"><button type="button" class="btn btn-info bg-warning">${food.recipe.source}</button></a>
 
 				</div>
 

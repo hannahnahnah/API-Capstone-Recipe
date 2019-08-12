@@ -62,7 +62,7 @@
 								<p class="card-text">${food.recipe.healthLabels}</p>
 							</div>
 						
-								<a href="/details?label=${food.recipe.uri}"><button
+								<a href="/details?label=${food.recipe.label}"><button
 										type="button"class="btn btn-danger btn-lg btn-block">Recipe</button></a>
 							</div>
 						</div>
