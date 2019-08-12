@@ -4,10 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+
+<!-- fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Pacifico&display=swap"
+	rel="stylesheet">
+
 <title>Recipe Results</title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -20,14 +27,19 @@
 
 </head>
 <body>
+<div class="jumbotron text-center" style="margin-bottom:0 ; background-image: url('https://c.pxhere.com/images/12/df/75ef1a554c8b23cca4fba078ed8a-1442849.jpg!d') ; background-repeat: none;" >
+ 
+</div>
+
+
 
 	<!--    navbar come here          -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
-		<a class="navbar-brand" href="/">The Golden Spoon</a>
+		<a class="navbar-brand" href="/" style="color:red;">The Golden Spoon</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarColor01" aria-controls="navbarColor01"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+			>
+			
 		</button>
 
 		<div id="navbarColor02">
@@ -44,40 +56,43 @@
 
 	<div class="wrapper">
 
-		<h1 style="text-align: center; padding-top: 2%;">Recipe List</h1>
-
-		<c:forEach items="${food}" var="food">
+		<h1
+			style="font-family: 'Pacifico', cursive; text-align: center; padding-top: 2%; padding-bottom: 2%; color: red; font-size: 60px;">Recipes</h1>
 		<div class="container">
-			<div class="col-md-4">
-				<div class="responsive">
-					<div  class="thumbnail" >
-						<div class="card text-white bg-warning mb-3"
-							>
-							<h3 class="card-header">${food.recipe.label}</h3>
-							<img style="height: 150px; width: 100%; display: block;"
-								src="${food.recipe.image}" alt="card-image">
-									<div class="desc">
-							<div class="card-body">
-							<p class="card-text">Allergy Alert</p>
-								<p class="card-text">${food.recipe.healthLabels}</p>
-							</div>
+			<c:forEach items="${food}" var="food" >
+
+				<div class="gallery"
+					style=";float: left; width: 33.33%; height: 500px; padding: 5px; ">
+					<div class="responsive">
+						<div class="thumbnail"  style="box-shadow: 5px 5px 7px #d9d9d2;"> 
 						
-								<a href="/details?label=${food.recipe.uri}"><button
-										type="button"class="btn btn-danger btn-lg btn-block">Recipe</button></a>
+							<div class="card text-white bg-warning mb-3">
+								<h4 class="card-header">${food.recipe.label}</h4>
+								<img style="height: 160px; width: 100%;"
+									src="${food.recipe.image}" alt="card-image">
+								<div class="desc">
+									<div class="card-body">
+										<p class="card-text">Heath Label: ${food.recipe.healthLabels}</p>
+										<p class="card-text">Serving Size: ${food.recipe.yield}</p>
+									</div>
+
+									<a href="/details?label=${food.recipe.uri}"><button
+											type="button" class="btn btn-danger btn-lg btn-block">Recipe</button></a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			</div>
-		</c:forEach>
+
+			</c:forEach>
 
 
 
 
 
 
-		<!--<<table class= "table">
+
+			<!--<<table class= "table">
 <thead>
 				<tr>
 					<th>Name</th>
@@ -100,8 +115,7 @@
 
 
 </table> -->
-	</div>
-
+		</div>
 </body>
 
 <!-- Core JS Files -->

@@ -4,11 +4,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/miss.css">
+
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+	
+	<!-- fonts -->
+<link
+	href="https://fonts.googleapis.com/css?family=Pacifico&display=swap"
+	rel="stylesheet">
+	
 <title>Item detail</title>
 <!-- Required meta tags -->
 <meta charset="utf-8">
@@ -21,13 +27,16 @@
 </head>
 <body>
 
+<div class="jumbotron text-center" style="margin-bottom:0 ; background-image: url('https://c.pxhere.com/photos/54/0f/bread_breakfast_delicious_eating_healthy_egg_yolk_eggs_food_food_photography-1552771.jpg!d') ; background-repeat: none; background-position: center;" >
+ 
+</div>
 	<!--    navbar come here          -->
 	<nav class="navbar navbar-expand-lg navbar-dark bg-warning">
-		<a class="navbar-brand" href="/">The Golden Spoon</a>
+		<a class="navbar-brand" href="/" style="color:red;">The Golden Spoon</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarColor01" aria-controls="navbarColor01"
-			aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+			>
+			
 		</button>
 
 		<div id="navbarColor02">
@@ -41,23 +50,34 @@
 	<!-- end navbar  -->
 
 	<div class="wrapper">
-		<h2>${food.recipe.label}</h2>
+		
+		<h1
+			style="font-family: 'Pacifico', cursive; text-align: center; padding-top: 2%; padding-bottom: 2%; color: red; font-size: 60px;">${food.recipe.label}</h1>
 		<div class="container" >
 
 			<div class="row">
-				<div class="column">
-					<img src="${food.recipe.image}" style="width: 150px; height: 150px">
-					<p>${food.recipe.dietLabels}</p>
-					<p>${food.recipe.healthLabels}</p>
-					<p>${food.recipe.calories}</p>
-					<p>${food.recipe.cautions}</p>
+				<div class="col-sm-4">
+				<div class="card bg-warning" style="width: inherit;">
+					<img src="${food.recipe.image}" style="width: 100%; height: 200px">
+					<div class="card-body">
+					<p class="card-text">DietLabels: ${food.recipe.dietLabels}</p>
+					<p class="card-text">Calories:${food.recipe.calories}</p>
+					<p class="card-text">Serving Size: ${food.recipe.calories}</p>
+					
+					</div>
+					</div>
+				
 				</div>
 
 
-				<div class="column">
+				<div class="col-sm-8">
 					<h3>Ingredients</h3>
 					<p>${food.recipe.ingredientLines}</p>
-					<a href="${food.recipe.url}"><button type="button" class="btn btn-info bg-warning">${food.recipe.source}</button></a>
+					<br>
+					<h3>Heath Labels</h3>
+					<p>${food.recipe.healthLabels}</p>
+					
+					<a href="${food.recipe.url}"><button type="button" class="btn btn-warning">${food.recipe.source}</button></a>
 
 				</div>
 
